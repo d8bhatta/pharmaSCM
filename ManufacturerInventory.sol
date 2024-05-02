@@ -109,7 +109,7 @@ contract Manufacturer is ManufacturerInventory {
             uint256  rQty= rawMaterials[rIndex].quantity;
             for(uint256 i=0; i< inventory[_sender].length; i++){
                 if ((keccak256(bytes(inventory[_sender][i].sku)) == keccak256(bytes(rSku))) ) {
-                    require(inventory[_sender][i].quantity > rQty, " The product sku doesn't have enough qty");
+                    require(inventory[_sender][i].quantity > rQty, " The product sku doesnt have enough qty");
                     if(updateInventory) {
                         inventory[_sender][i].quantity -= rQty;
                     }
